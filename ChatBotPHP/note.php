@@ -48,7 +48,7 @@
                             <a href='upd_note.php?id=" . $note->id . "'>
                             <button class='del' title='Обновить'>Обновить</button>
                             </a>
-                          
+
                         </div>
 
                     </div>";
