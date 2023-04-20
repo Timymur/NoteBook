@@ -138,7 +138,11 @@ form button{
   color: #42410c;
   transition: transform 500ms ease;
 }
-
+.error-mess{
+  color: #de7474;
+  margin: 10px 0;
+  display: none;
+}
 .del {
 
   padding: 15px 25px;

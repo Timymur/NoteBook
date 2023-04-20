@@ -11,6 +11,7 @@
         require "blocks/header.php" ;
     ?>
     <main>
+      <?php if(isset($_COOKIE['login'])): ?>
       <?php
             $pdo = new PDO('mysql:host=localhost;dbname=NoteBook','root','');
 
@@ -18,6 +19,7 @@
             $query = $pdo->query($sql);
 
             while($row = $query->fetch(PDO::FETCH_OBJ)){
+
               echo "<div class='post'>
                         <div class='item1'>
                             <h1>" . $row->name . "</h1>
@@ -25,6 +27,7 @@
                             <p class='adres'>Адрес:<br>  " . $row->adres . "</p>
                             <a href='note.php?id=" . $row->id . "' title '" . $row->name . "'>Подробнее</a>
                         </div>
+
                         <div class='chng_btn','item2' >
                             <a href='del_note.php?id=" . $row->id . "'>
                             <button class='del'  title='Удалить'>Удалить</button>
@@ -38,6 +41,9 @@
             }
 
       ?>
+    <?php else:?>
+      <h1>Авторизуйтесь</h1>
+    <?php endif;?>
     </main>
     <?php
         require "blocks/footer.php" ;
